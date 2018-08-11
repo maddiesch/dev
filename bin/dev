@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/dev'
+
+(command, *args) = ARGV
+
+Logger.default(Logger.new(STDOUT, STDERR, trace: true))
+
+begin
+  Dev.run(command, *args)
+rescue StandardError => error
+  Logger.error(error.message)
+  raise error
+  exit 1
+end
