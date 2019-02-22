@@ -20,10 +20,12 @@ services:
       - 11211:11211
   dynamodb:
     image: amazon/dynamodb-local:latest
+    entrypoint: java
+    command: "-jar DynamoDBLocal.jar -dbPath /data"
     ports:
       - 8000:8000
     volumes:
-      - dynamodb-data:/home/dynamodblocal
+      - dynamodb-data:/data
   postgres:
     image: postgres:10
     ports:
