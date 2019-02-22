@@ -6,6 +6,7 @@ class Color
 
     def colorize(str, color_code)
       return str if @disabled
+
       "\e[#{color_code}m#{str}\e[0m"
     end
 

@@ -8,6 +8,5 @@ begin
   Dev.run(command, *args)
 rescue StandardError => error
   Logger.error(error.message)
-  raise error
   exit 1
 end

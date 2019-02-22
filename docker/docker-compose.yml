@@ -19,11 +19,11 @@ services:
     ports:
       - 11211:11211
   dynamodb:
-    image: skylarsch/dynamodb-dev:latest
+    image: amazon/dynamodb-local:latest
     ports:
       - 8000:8000
     volumes:
-      - dynamodb-data:/var/dynamodb_local
+      - dynamodb-data:/home/dynamodblocal
   postgres:
     image: postgres:10
     ports:
